@@ -48,7 +48,8 @@
       "Areas/**/Views",
       "appsettings.json",
       "web.config",
-      "aws-windows-deployment-manifest.json"
+      "aws-windows-deployment-manifest.json",
+      ".ebextensions"
     ]
   },
 
