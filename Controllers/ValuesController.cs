@@ -3,18 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace vulcan_api.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private IConfiguration configuration;
+
+        public ValuesController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
             Response.Headers.Add("X-Color", $"{Environment.GetEnvironmentVariable("color")}");
-            return new string[] { "value1", "value2" };
+            // return new string[] { "value1", "value2" };
+            return new string[] { "value1", "value2", configuration.GetValue<string>("color") };
         }
 
         // GET api/values/5

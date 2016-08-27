@@ -29,6 +29,7 @@ namespace vulcan_api
         {
             // Add framework services.
             services.AddMvc();
+            services.AddSingleton<IConfiguration>(sp => { return Configuration; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
