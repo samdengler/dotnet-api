@@ -21,9 +21,14 @@ namespace vulcan_api.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            Response.Headers.Add("X-Color", $"{Environment.GetEnvironmentVariable("color")}");
-            // return new string[] { "value1", "value2" };
-            return new string[] { "value1", "value2", configuration.GetValue<string>("color") };
+            Response.Headers.Add("X-Color", Environment.GetEnvironmentVariable("PARAM1"));
+            return new string[]
+            {
+                "value1",
+                "value2",
+                configuration.GetValue<string>("PARAM1"),
+                Environment.GetEnvironmentVariable("PARAM1")
+            };
         }
 
         // GET api/values/5

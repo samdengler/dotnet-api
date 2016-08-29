@@ -26,7 +26,7 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "color": "blue"
+                "PARAM1": "blue"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceRoot}/Views"
