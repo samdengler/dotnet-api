@@ -27,6 +27,7 @@ namespace vulcan_api.Controllers
                 "value1",
                 "value2",
                 configuration.GetValue<string>("PARAM1"),
+                configuration.GetSection("AppSettings").GetValue<string>("PARAM1"),
                 Environment.GetEnvironmentVariable("PARAM1")
             };
         }
